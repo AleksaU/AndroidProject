@@ -4,10 +4,8 @@ import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
 import android.os.Handler
 import android.view.View
-import android.widget.Toast
 import kotlinx.android.synthetic.main.activity_main.*
 import kotlinx.android.synthetic.main.myrow.view.*
-
 
 class MainActivity : AppCompatActivity(), View.OnClickListener {
     var timer: Boolean = true
@@ -78,7 +76,6 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
                 colorInt = v.getResources().getColor(R.color.colorAccent)
                 if (timer == true) {
                     countClicks++
-                    Toast.makeText(this, "count = $countClicks", Toast.LENGTH_SHORT).show()
                     visib1 = View.VISIBLE
                     checkClicks()
                 }
@@ -89,8 +86,6 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
                 colorInt = v.getResources().getColor(R.color.colorPrimary)
                 if (timer == true) {
                     countClicks++
-
-                    Toast.makeText(this, "count = $countClicks", Toast.LENGTH_SHORT).show()
                     visib1 = View.VISIBLE
                     checkClicks()
                 }
@@ -101,7 +96,6 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
                 colorInt = v.getResources().getColor(R.color.colorYellow)
                 if (timer == true) {
                     countClicks++
-                    Toast.makeText(this, "count = $countClicks", Toast.LENGTH_SHORT).show()
                     visib1 = View.VISIBLE
                     checkClicks()
                 }
