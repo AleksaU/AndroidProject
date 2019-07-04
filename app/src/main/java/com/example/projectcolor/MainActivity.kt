@@ -39,14 +39,12 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
                 visib2 = View.VISIBLE
                 drawUpLine2(colorInt, visib2)
             }
-
             if (countClicks == 3) {
                 visib1 = View.INVISIBLE
                 visib2 = View.INVISIBLE
                 visib3 = View.VISIBLE
                 drawUpLine3(colorInt, visib3)
             }
-
             if (countClicks == 4) {
                 visib1 = View.INVISIBLE
                 visib2 = View.INVISIBLE
@@ -54,7 +52,6 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
                 visib4 = View.VISIBLE
                 drawUpLine4(colorInt, visib4)
             }
-
             if (countClicks == 5) {
                 visib1 = View.INVISIBLE
                 visib2 = View.INVISIBLE
@@ -63,49 +60,39 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
                 visib5 = View.VISIBLE
                 drawUpLine5(colorInt, visib5)
             }
-
             if (countClicks > 5) {
                 countClicks = 0
+            }
+        }
 
+        fun timerTrue() {
+            if (timer == true) {
+                countClicks++
+                visib1 = View.VISIBLE
+                checkClicks()
             }
         }
 
         when (v?.getId()) {
             R.id.btn1 -> {
-
                 colorInt = v.getResources().getColor(R.color.colorAccent)
-                if (timer == true) {
-                    countClicks++
-                    visib1 = View.VISIBLE
-                    checkClicks()
-                }
-
+                timerTrue()
                 colorInt = v.getResources().getColor(R.color.colorAccent)
             }
             R.id.btn2 -> {
                 colorInt = v.getResources().getColor(R.color.colorPrimary)
-                if (timer == true) {
-                    countClicks++
-                    visib1 = View.VISIBLE
-                    checkClicks()
-                }
+                timerTrue()
                 colorInt = v.getResources().getColor(R.color.colorPrimary)
             }
 
             R.id.btn3 -> {
                 colorInt = v.getResources().getColor(R.color.colorYellow)
-                if (timer == true) {
-                    countClicks++
-                    visib1 = View.VISIBLE
-                    checkClicks()
-                }
+                timerTrue()
                 colorInt = v.getResources().getColor(R.color.colorYellow)
             }
-
         }
         drawLine(colorInt, visib1)
         timer = true
-
     }
 
     override fun onCreate(savedInstanceState: Bundle?) {
